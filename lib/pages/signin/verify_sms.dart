@@ -15,6 +15,7 @@ class VerifySmsPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
           title: Text(
             'Parolni tiklash',

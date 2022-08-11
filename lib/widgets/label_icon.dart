@@ -24,6 +24,7 @@ class LabelIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CircleAvatar(
           backgroundColor: bgColor ?? const Color(0xffEEF7EE),
@@ -34,6 +35,7 @@ class LabelIcon extends StatelessWidget {
             color: iconColor ?? const Color(0xff326A32),
           ),
         ),
+        const SizedBox(width: 4),
         Text(
           label,
           style: GoogleFonts.montserrat(

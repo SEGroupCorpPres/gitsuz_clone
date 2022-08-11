@@ -1,11 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gitsuz/pages/home/view/home.dart';
+import 'package:gitsuz/pages/home/home.dart';
 import 'package:gitsuz/pages/intro/intro_home.dart';
 import 'dart:async';
-
-import 'package:gitsuz/repositories/auth_repository.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,10 +19,8 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   late AnimationController _controller;
   late Animation<double> _opacity;
   late Animation<double> _transform;
-  final _navigatorKey = GlobalKey<NavigatorState>();
 
 // // //
-  NavigatorState get _navigator => _navigatorKey.currentState!;
   bool _a = false;
 
   @override

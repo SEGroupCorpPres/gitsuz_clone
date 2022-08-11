@@ -2,7 +2,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gitsuz/bloc/auth/auth_bloc.dart';
-import 'package:gitsuz/pages/home/view/home.dart';
+import 'package:gitsuz/pages/home/home.dart';
 import 'package:gitsuz/pages/signin/recovery_password.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,6 +36,7 @@ class _SignInPageState extends State<SignInPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
           title: Text(
             'Kirish',

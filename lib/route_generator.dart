@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitsuz/pages/auth/auth.dart';
-import 'package:gitsuz/pages/home/view/home.dart';
+import 'package:gitsuz/pages/home/home.dart';
 import 'package:gitsuz/pages/intro/intro.dart';
 import 'package:gitsuz/pages/intro/intro_home.dart';
 import 'package:gitsuz/pages/signin/recovery_password.dart';
