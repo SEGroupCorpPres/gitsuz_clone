@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "523615656886",
+    "project_id": "gitsuz-clone",
+    "storage_bucket": "gitsuz-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523615656886:android:1494435e5ffd3da8da3f17",
+        "android_client_info": {
+          "package_name": "com.qwertalfajr.presidentftinc.gitsuz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523615656886-5os5ip4niq9j8o2uvhektgbh9s9d1v5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJPd1FHbc8dYcXpsX1VW3N8Op2ZsU-5JA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523615656886-5os5ip4niq9j8o2uvhektgbh9s9d1v5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
