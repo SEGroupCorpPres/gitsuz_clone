@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LangSettings extends StatelessWidget {
-  const LangSettings({Key? key}) : super(key: key);
+class PostPage extends StatelessWidget {
+  const PostPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

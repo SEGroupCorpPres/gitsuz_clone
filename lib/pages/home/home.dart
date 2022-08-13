@@ -25,20 +25,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   var currentIndex = 0;
   final user = FirebaseAuth.instance.currentUser!;
-  List<IconData> listOfIcons = [
-    FeatherIcons.home,
-    FeatherIcons.search,
-    Icons.article_outlined,
-    EvaIcons.personOutline,
-  ];
-
-  List<String> listOfStrings = [
-    'Asosiy',
-    'Qidiruv',
-    'Blog',
-    'Profile',
-  ];
-
   @override
   void initState() {
     currentIndex;
@@ -101,57 +87,69 @@ class _HomeState extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              BottomNavBarItem(
-                                icon: FeatherIcons.home,
-                                title: 'Asosiy',
-                                onTap: () {
-                                  BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.homePage);
-                                  setState(() {
-                                    currentIndex = 0;
-                                  });
-                                },
-                                color: const Color(0xff326A32),
-                                size: size.width * 0.06,
-                                fontSize: size.width * 0.04,
+                              Flexible(
+                                flex: 1,
+                                child: BottomNavBarItem(
+                                  icon: FeatherIcons.home,
+                                  title: currentIndex == 0 ? 'Asosiy' : '',
+                                  onTap: () {
+                                    BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.homePage);
+                                    setState(() {
+                                      currentIndex = 0;
+                                    });
+                                  },
+                                  color: const Color(0xff326A32),
+                                  size: size.width * 0.06,
+                                  fontSize: size.width * 0.04,
+                                ),
                               ),
-                              BottomNavBarItem(
-                                icon: FeatherIcons.search,
-                                title: 'Qidiruv',
-                                onTap: () {
-                                  BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.searchPage);
-                                  setState(() {
-                                    currentIndex = 1;
-                                  });
-                                },
-                                color: const Color(0xff326A32),
-                                size: size.width * 0.06,
-                                fontSize: size.width * 0.04,
+                              Flexible(
+                                flex: 1,
+                                child: BottomNavBarItem(
+                                  icon: FeatherIcons.search,
+                                  title: currentIndex == 1 ? 'Qidiruv' : '',
+                                  onTap: () {
+                                    BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.searchPage);
+                                    setState(() {
+                                      currentIndex = 1;
+                                    });
+                                  },
+                                  color: const Color(0xff326A32),
+                                  size: size.width * 0.06,
+                                  fontSize: size.width * 0.04,
+                                ),
                               ),
-                              BottomNavBarItem(
-                                icon: Icons.article_outlined,
-                                title: 'Blog',
-                                onTap: () {
-                                  BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.blogPage);
-                                  setState(() {
-                                    currentIndex = 2;
-                                  });
-                                },
-                                color: const Color(0xff326A32),
-                                size: size.width * 0.06,
-                                fontSize: size.width * 0.04,
+                              Flexible(
+                                flex: 1,
+                                child: BottomNavBarItem(
+                                  icon: Icons.article_outlined,
+                                  title: currentIndex == 2 ? 'Blog' : '',
+                                  onTap: () {
+                                    BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.blogPage);
+                                    setState(() {
+                                      currentIndex = 2;
+                                    });
+                                  },
+                                  color: const Color(0xff326A32),
+                                  size: size.width * 0.06,
+                                  fontSize: size.width * 0.04,
+                                ),
                               ),
-                              BottomNavBarItem(
-                                icon: EvaIcons.personOutline,
-                                title: 'Profil',
-                                onTap: () {
-                                  BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.profilePage);
-                                  setState(() {
-                                    currentIndex = 3;
-                                  });
-                                },
-                                color: const Color(0xff326A32),
-                                size: size.width * 0.06,
-                                fontSize: size.width * 0.04,
+                              Flexible(
+                                flex: 1,
+                                child: BottomNavBarItem(
+                                  icon: EvaIcons.personOutline,
+                                  title: currentIndex == 3 ? 'Profil' : '',
+                                  onTap: () {
+                                    BlocProvider.of<BottomNavBarCubit>(context).getNavbarItem(NavbarItem.profilePage);
+                                    setState(() {
+                                      currentIndex = 3;
+                                    });
+                                  },
+                                  color: const Color(0xff326A32),
+                                  size: size.width * 0.06,
+                                  fontSize: size.width * 0.04,
+                                ),
                               ),
                             ],
                           ),

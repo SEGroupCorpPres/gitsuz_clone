@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           Padding(
             padding: const EdgeInsets.all(15),
             child: GestureDetector(
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => SavePage())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SavePage())),
               child: SvgPicture.asset(
                 'assets/save.svg',
                 fit: BoxFit.fitWidth,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gitsuz/bloc/auth/auth_bloc.dart';
 import 'package:gitsuz/pages/proposition/list_propositions.dart';
+import 'package:gitsuz/pages/save/save_page.dart';
 import 'package:gitsuz/repositories/auth_repository.dart';
 import 'package:gitsuz/widgets/label_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -236,7 +237,7 @@ class ProfilePage extends StatelessWidget {
                                       ),
                                     ),
                                     GestureDetector(
-                                      onTap: () {},
+                                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SavePage())),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
