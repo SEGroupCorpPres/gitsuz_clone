@@ -367,11 +367,17 @@ class PropositionPage extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'Abdusattor Ergashev',
-                                                style: Theme.of(context).textTheme.headline5?.copyWith(fontSize: size.width * 0.065, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headline5?.copyWith(
+                                                      fontSize: size.width * 0.055,
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
                                               ),
                                               Text(
                                                 '33 yosh | Gid va Tarjimon',
-                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: size.width * 0.045, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                                      fontSize: size.width * 0.04,
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
                                               )
                                             ],
                                           ),
@@ -525,11 +531,17 @@ class PropositionPage extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'Abdusattor Ergashev',
-                                                style: Theme.of(context).textTheme.headline5?.copyWith(fontSize: size.width * 0.065, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headline5?.copyWith(
+                                                  fontSize: size.width * 0.055,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               ),
                                               Text(
                                                 '33 yosh | Gid va Tarjimon',
-                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: size.width * 0.045, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                                  fontSize: size.width * 0.04,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               )
                                             ],
                                           ),
@@ -566,8 +578,8 @@ class PropositionPage extends StatelessWidget {
                                     SizedBox(height: 10),
                                     Text(
                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta quis mi egestas massa tortor. Pellentesque bibendum commodo sed'
-                                      ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
-                                      'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
+                                          ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
+                                          'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
                                       style: GoogleFonts.montserrat(
                                         color: Colors.black.withOpacity(0.8),
                                         letterSpacing: 0.25,
@@ -683,11 +695,17 @@ class PropositionPage extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'Abdusattor Ergashev',
-                                                style: Theme.of(context).textTheme.headline5?.copyWith(fontSize: size.width * 0.065, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headline5?.copyWith(
+                                                  fontSize: size.width * 0.055,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               ),
                                               Text(
                                                 '33 yosh | Gid va Tarjimon',
-                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: size.width * 0.045, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                                  fontSize: size.width * 0.04,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               )
                                             ],
                                           ),
@@ -724,8 +742,8 @@ class PropositionPage extends StatelessWidget {
                                     SizedBox(height: 10),
                                     Text(
                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta quis mi egestas massa tortor. Pellentesque bibendum commodo sed'
-                                      ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
-                                      'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
+                                          ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
+                                          'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
                                       style: GoogleFonts.montserrat(
                                         color: Colors.black.withOpacity(0.8),
                                         letterSpacing: 0.25,
@@ -841,11 +859,17 @@ class PropositionPage extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'Abdusattor Ergashev',
-                                                style: Theme.of(context).textTheme.headline5?.copyWith(fontSize: size.width * 0.065, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headline5?.copyWith(
+                                                  fontSize: size.width * 0.055,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               ),
                                               Text(
                                                 '33 yosh | Gid va Tarjimon',
-                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: size.width * 0.045, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                                  fontSize: size.width * 0.04,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               )
                                             ],
                                           ),
@@ -882,8 +906,8 @@ class PropositionPage extends StatelessWidget {
                                     SizedBox(height: 10),
                                     Text(
                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta quis mi egestas massa tortor. Pellentesque bibendum commodo sed'
-                                      ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
-                                      'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
+                                          ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
+                                          'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
                                       style: GoogleFonts.montserrat(
                                         color: Colors.black.withOpacity(0.8),
                                         letterSpacing: 0.25,
@@ -999,11 +1023,17 @@ class PropositionPage extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'Abdusattor Ergashev',
-                                                style: Theme.of(context).textTheme.headline5?.copyWith(fontSize: size.width * 0.065, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headline5?.copyWith(
+                                                  fontSize: size.width * 0.055,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               ),
                                               Text(
                                                 '33 yosh | Gid va Tarjimon',
-                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: size.width * 0.045, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                                  fontSize: size.width * 0.04,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                               )
                                             ],
                                           ),
@@ -1040,8 +1070,8 @@ class PropositionPage extends StatelessWidget {
                                     SizedBox(height: 10),
                                     Text(
                                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porta quis mi egestas massa tortor. Pellentesque bibendum commodo sed'
-                                      ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
-                                      'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
+                                          ' massa egestas augue commodo. Purus ut facilisis nisi, eros nisi auctor ornare proin. Arcu orci, sem facilisi vel a. '
+                                          'Praesent non potenti sit eu pharetra. Porttitor habitant congue pretium turpis purus, at egestas tempor varius. Adipiscing pharetra sit euismod in ornare. Risus vitae aliquet donec tempus sed mauris. Eu proin amet, turpis maecenas erat lorem purus odio.',
                                       style: GoogleFonts.montserrat(
                                         color: Colors.black.withOpacity(0.8),
                                         letterSpacing: 0.25,

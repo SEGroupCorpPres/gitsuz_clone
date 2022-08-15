@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:gitsuz/pages/blog_screen/post_page.dart';
 import 'package:gitsuz/widgets/label_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -54,7 +55,7 @@ class _BlogPageState extends State<BlogPage> with SingleTickerProviderStateMixin
                 FeatherIcons.search,
               ),
             ),
-          )
+          ),
         ],
         bottom: TabBar(
           indicatorColor: const Color(0xff326A32),
@@ -193,7 +194,7 @@ class _BlogPageState extends State<BlogPage> with SingleTickerProviderStateMixin
                               Padding(
                                 padding: EdgeInsets.only(top: size.width * 0.03, right: 10),
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => PostPage())),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -342,7 +343,7 @@ class _BlogPageState extends State<BlogPage> with SingleTickerProviderStateMixin
                               Padding(
                                 padding: EdgeInsets.only(top: size.width * 0.03, right: 10),
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => PostPage())),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     crossAxisAlignment: CrossAxisAlignment.center,

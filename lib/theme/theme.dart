@@ -17,6 +17,7 @@ final theme = ThemeData(
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Colors.white,
         systemStatusBarContrastEnforced: true,
+        statusBarIconBrightness: Brightness.dark,
       ),
       iconTheme: const IconThemeData(
         color: Color(0xff326A32),

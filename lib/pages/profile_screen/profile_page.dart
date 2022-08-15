@@ -81,7 +81,10 @@ class ProfilePage extends StatelessWidget {
                                             children: [
                                               Text(
                                                 'Abdusattor Ergashev',
-                                                style: Theme.of(context).textTheme.headline5?.copyWith(fontSize: size.width * 0.065, fontWeight: FontWeight.w500),
+                                                style: Theme.of(context).textTheme.headline5?.copyWith(
+                                                      fontSize: size.width * 0.055,
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
                                               ),
                                             ],
                                           ),
@@ -109,7 +112,11 @@ class ProfilePage extends StatelessWidget {
                                               Text(
                                                 'Angliya, London',
                                                 style: GoogleFonts.montserrat(
-                                                    fontSize: size.height * 0.02, color: Colors.black, fontWeight: FontWeight.w500, letterSpacing: 0.1),
+                                                  fontSize: size.height * 0.02,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w500,
+                                                  letterSpacing: 0.1,
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -132,7 +139,11 @@ class ProfilePage extends StatelessWidget {
                                               Text(
                                                 'Kun.Uz, Company',
                                                 style: GoogleFonts.montserrat(
-                                                    fontSize: size.height * 0.02, color: Colors.black, fontWeight: FontWeight.w500, letterSpacing: 0.1),
+                                                  fontSize: size.height * 0.02,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.w500,
+                                                  letterSpacing: 0.1,
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -149,7 +160,12 @@ class ProfilePage extends StatelessWidget {
                                   child: Text(
                                     'Profilni o\'zgartirish',
                                     style: GoogleFonts.montserrat(
-                                        color: const Color(0xff438E43), fontWeight: FontWeight.w500, fontStyle: FontStyle.normal, fontSize: 20, height: 1.6),
+                                      color: const Color(0xff438E43),
+                                      fontWeight: FontWeight.w500,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 20,
+                                      height: 1.6,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -180,7 +196,7 @@ class ProfilePage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     GestureDetector(
-                                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ListOfProposition())),
+                                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ListOfProposition())),
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
