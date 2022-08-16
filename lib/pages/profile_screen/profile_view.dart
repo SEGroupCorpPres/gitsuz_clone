@@ -1,11 +1,16 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:gitsuz/pages/profile_screen/widgets/controls_overlay.dart';
+import 'package:gitsuz/pages/profile_screen/widgets/profile_done_icon.dart';
+import 'package:gitsuz/pages/profile_screen/widgets/profile_label_icon.dart';
+import 'package:gitsuz/pages/profile_screen/widgets/profile_pic_gallery.dart';
+import 'package:gitsuz/pages/profile_screen/widgets/topic.dart';
 import 'package:gitsuz/pages/save/save_page.dart';
-import 'package:gitsuz/widgets/label_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:video_player/video_player.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -81,7 +86,7 @@ class _ProfileViewState extends State<ProfileView> {
                       child: Stack(
                         children: <Widget>[
                           VideoPlayer(_controller),
-                          _ControlsOverlay(controller: _controller),
+                          ControlsOverlay(controller: _controller),
                         ],
                       ),
                     ),
@@ -526,6 +531,59 @@ class _ProfileViewState extends State<ProfileView> {
                               color: Colors.black,
                             ),
                       ),
+                      Column(
+                        children: const [
+                          Topic(
+                            topic: 'Umumiy mavzular',
+                            topicStatus: 'Yaxshi',
+                          ),
+                          Topic(
+                            topic: 'Jamiyat va Siyosat',
+                            topicStatus: 'Yo\'q',
+                          ),
+                          Topic(
+                            topic: 'Iqtisodiyot va Moliya',
+                            topicStatus: 'Yaxshi',
+                          ),
+                          Topic(
+                            topic: 'Huquqshunoslik',
+                            topicStatus: 'Yaxshi',
+                          ),
+                          Topic(
+                            topic: 'Axborot Texnologiyalari',
+                            topicStatus: 'A\'lo',
+                          ),
+                          Topic(
+                            topic: 'Reklama va Marketing',
+                            topicStatus: 'O\'rtacha',
+                          ),
+                          Topic(
+                            topic: 'Sano\'at va Texnologiya',
+                            topicStatus: 'O\'rtacha',
+                          ),
+                          Topic(
+                            topic: 'Neft va Gaz',
+                            topicStatus: 'A\'lo',
+                          ),
+                          Topic(
+                            topic: 'Iqtisodiyot va Moliya',
+                            topicStatus: 'A\'lo',
+                          ),
+                          Topic(
+                            topic: 'Ilmiy va Texnik Adabiyotlar',
+                            topicStatus: 'A\'lo',
+                          ),
+                          Topic(
+                            topic: 'Baadiy adabiyot',
+                            topicStatus: 'Yaxshi',
+                          ),
+                          Topic(
+                            topic: 'Tibbiyot va Farmatsevtika',
+                            topicStatus: 'Yaxshi',
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 25),
                       Container(
                         color: const Color(0xffBBDFBB),
                         height: size.height * 0.06,
@@ -543,6 +601,7 @@ class _ProfileViewState extends State<ProfileView> {
                           ),
                         ),
                       ),
+                      ProfilePicGallery(),
                       Container(
                         color: const Color(0xffBBDFBB),
                         height: size.height * 0.06,
@@ -560,6 +619,15 @@ class _ProfileViewState extends State<ProfileView> {
                           ),
                         ),
                       ),
+                      Row(
+                        children: [
+                          BarChart(
+                            BarChartData(
+
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
@@ -571,130 +639,10 @@ class _ProfileViewState extends State<ProfileView> {
     );
   }
 
-  List decImage = [
+  static List decImage = [
     'assets/Rectangle285.png',
     'assets/Rectangle286.png',
     'assets/Rectangle287.png',
     'assets/Rectangle288.png',
   ];
-}
-
-class _ControlsOverlay extends StatelessWidget {
-  const _ControlsOverlay({Key? key, required this.controller}) : super(key: key);
-
-  final VideoPlayerController controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        AnimatedSwitcher(
-          duration: const Duration(milliseconds: 50),
-          reverseDuration: const Duration(milliseconds: 200),
-          child: controller.value.isPlaying
-              ? const SizedBox.shrink()
-              : Container(
-                  color: Colors.transparent,
-                  child: const Center(
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                      size: 45.0,
-                      semanticLabel: 'Play',
-                    ),
-                  ),
-                ),
-        ),
-        GestureDetector(
-          onTap: () {
-            controller.value.isPlaying ? controller.pause() : controller.play();
-          },
-        ),
-      ],
-    );
-  }
-}
-
-class ProfilLabelIcon extends StatelessWidget {
-  final String label;
-  final IconData icon;
-  final Color? iconColor;
-  final Color? bgColor;
-  final double iconSize;
-  final double fontSize;
-  final Color? labelColor;
-
-  const ProfilLabelIcon({
-    Key? key,
-    required this.label,
-    required this.icon,
-    required this.iconSize,
-    required this.fontSize,
-    this.bgColor,
-    this.iconColor,
-    this.labelColor,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CircleAvatar(
-          backgroundColor: bgColor ?? const Color(0xffEEF7EE),
-          radius: 25,
-          child: Icon(
-            icon,
-            size: iconSize,
-            color: iconColor ?? const Color(0xff326A32),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 5),
-          child: Text(
-            label,
-            style: GoogleFonts.montserrat(
-              fontSize: fontSize,
-              color: labelColor ?? Colors.black,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class ProfileDoneIcon extends StatelessWidget {
-  final String label;
-  final IconData icon;
-  final double iconSize;
-  final double fontSize;
-
-  const ProfileDoneIcon({
-    Key? key,
-    required this.label,
-    required this.icon,
-    required this.iconSize,
-    required this.fontSize,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          icon,
-          size: iconSize,
-          color: Colors.black,
-        ),
-        const SizedBox(width: 4),
-        Text(
-          label,
-          style: GoogleFonts.montserrat(
-            fontSize: fontSize,
-            color: Colors.black,
-          ),
-        ),
-      ],
-    );
-  }
 }
