@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gitsuz/pages/save/save_page.dart';
+import 'package:gitsuz/widgets/label_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:video_player/video_player.dart';
@@ -175,7 +176,11 @@ class _ProfileViewState extends State<ProfileView> {
                         'Lectus sed tempus arcu vel sit. Tempor amet nunc erat vivamus arcu. Arcu ut enim, ut quis nisi felis. Ac, dignissim est ligula sit nunc '
                         'bibendum. Donec nisi quis elit eget at tellus. Arcu scelerisque risus sed sed amet. Est tortor, nunc suscipit ac, et quis id ut turpis. '
                         'Lacinia a, id viverra volutpat, mattis. Sit massa sit ut egestas.',
-                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: size.width * 0.035, fontWeight: FontWeight.w500, letterSpacing: 0.25),
+                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                              fontSize: size.width * 0.035,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 0.25,
+                            ),
                       ),
                       const SizedBox(height: 25),
                       Text(
@@ -186,22 +191,49 @@ class _ProfileViewState extends State<ProfileView> {
                               color: Colors.black,
                             ),
                       ),
-                      SizedBox(height: 10),
-                      Text(
-                        '1. 2010 Yil: Elit purus cursus ornare feugiat integer purus cursus ornare',
-                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                              fontSize: size.width * 0.035,
-                              fontWeight: FontWeight.w500,
+                      const SizedBox(height: 10),
+                      Text.rich(
+                        TextSpan(
+                          text: '1. 2010 Yil:',
+                          children: [
+                            TextSpan(
+                              text: ' Elit purus cursus ornare feugiat integer purus cursus ornare',
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                             ),
+                          ],
+                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: size.width * 0.035,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                        ),
                       ),
-                      Text(
-                        '2. 2011 Yil: Elit purus cursus ornare feugiat.',
-                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: size.width * 0.035, fontWeight: FontWeight.w500, letterSpacing: 0.25),
+                      Text.rich(
+                        TextSpan(
+                          text: '2. 2011 Yil:',
+                          children: [
+                            TextSpan(
+                              text: ' Elit purus cursus ornare feugiat',
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ],
+                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: size.width * 0.035,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                        ),
                       ),
                       const SizedBox(height: 30),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const[
+                        children: const [
                           ProfilLabelIcon(label: '9/10', icon: Icons.star, iconSize: 30, fontSize: 15),
                           ProfilLabelIcon(label: 'Fikrlar: 34', icon: Icons.textsms_outlined, iconSize: 30, fontSize: 15),
                           ProfilLabelIcon(label: '355\$', icon: Ionicons.wallet_outline, iconSize: 30, fontSize: 15),
@@ -213,16 +245,321 @@ class _ProfileViewState extends State<ProfileView> {
                         height: size.height * 0.06,
                         child: Center(
                           child: Text(
-                            'Ma\'lumotlarim va Ish tajribam',style: GoogleFonts.montserrat(
-                            textStyle: const TextStyle(
-                              color: Color(0xff2B5C2B),
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 0.15
+                            'Ma\'lumotlarim va Ish tajribam',
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                color: const Color(0xff2B5C2B),
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 0.15,
+                                fontSize: size.height * 0.025,
+                              ),
                             ),
                           ),
+                        ),
+                      ),
+                      const SizedBox(height: 45),
+                      Text(
+                        'Institut yoki Universitet',
+                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                              fontSize: size.width * 0.04,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                            ),
+                      ),
+                      const SizedBox(height: 10),
+                      Text.rich(
+                        TextSpan(
+                          text: '1. 1997 Yil:',
+                          children: [
+                            TextSpan(
+                              text: ' Toshkent Axborot va Texnologiya Instituti.',
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                              children: [
+                                TextSpan(
+                                  text: 'Mutaxasislik:',
+                                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                        fontSize: size.width * 0.035,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.black,
+                                      ),
+                                ),
+                                TextSpan(
+                                  text: 'Tarjimon',
+                                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                        fontSize: size.width * 0.035,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ],
+                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: size.width * 0.035,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+                      Text.rich(
+                        TextSpan(
+                          text: '2. 2004 Yil:',
+                          children: [
+                            TextSpan(
+                              text: ' Elit purus cursus ornare feugiat',
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ],
+                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: size.width * 0.035,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                        ),
+                      ),
+                      const SizedBox(height: 15),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              text: 'Tajriba:',
+                              children: [
+                                TextSpan(
+                                  text: ' 4 yil',
+                                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                        fontSize: size.width * 0.035,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ],
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          RichText(
+                            text: TextSpan(
+                              text: 'Hozirgi ish joyi:',
+                              children: [
+                                TextSpan(
+                                  text: ' Samani Tour',
+                                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                        fontSize: size.width * 0.035,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ],
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          RichText(
+                            text: TextSpan(
+                              text: 'Lavozimi:',
+                              children: [
+                                TextSpan(
+                                  text: ' Menejer',
+                                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                        fontSize: size.width * 0.035,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ],
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          RichText(
+                            text: TextSpan(
+                              text: 'Ish vaqti:',
+                              children: [
+                                TextSpan(
+                                  text: ' 10:00 - 18:00',
+                                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                        fontSize: size.width * 0.035,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ],
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 15),
+                      Text(
+                        'Sertificat va Diplomlar:',
+                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                              fontSize: size.width * 0.04,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                            ),
+                      ),
+                      const SizedBox(height: 10),
+                      Container(
+                        padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 0),
+                        width: double.infinity,
+                        height: 400,
+                        child: GridView.builder(
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                          ),
+                          itemCount: decImage.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GridTile(
+                              child: Container(
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 5,
+                                      offset: const Offset(0, 1),
+                                    ),
+                                  ],
+                                  image: DecorationImage(
+                                    image: AssetImage(decImage[index]),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                      Container(
+                        color: const Color(0xffBBDFBB),
+                        height: size.height * 0.06,
+                        child: Center(
+                          child: Text(
+                            'Xizmatlar',
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                color: const Color(0xff2B5C2B),
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 0.15,
+                                fontSize: size.height * 0.025,
+                              ),
+                            ),
                           ),
                         ),
-                      )
+                      ),
+                      const SizedBox(height: 20),
+                      RichText(
+                        text: TextSpan(
+                          text: 'Bir kunlik ish hajmi: ',
+                          children: [
+                            TextSpan(
+                              text: ' 2400 ta so\'z',
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ],
+                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: size.width * 0.035,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      RichText(
+                        text: TextSpan(
+                          text: 'Tarjima qilish uchun foydalanadigan CAT dasturlari: ',
+                          children: [
+                            TextSpan(
+                              text: ' Google Translate Service',
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontSize: size.width * 0.035,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                            ),
+                          ],
+                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                fontSize: size.width * 0.035,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                              ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const ProfileDoneIcon(label: 'Og\'zaki tarjima(sinxron)', icon: Icons.check, iconSize: 18, fontSize: 15),
+                      const SizedBox(height: 10),
+                      const ProfileDoneIcon(label: 'Dam olish kunlari', icon: Icons.check, iconSize: 18, fontSize: 15),
+                      const SizedBox(height: 10),
+                      const ProfileDoneIcon(label: 'Matnlarni taxrirlash', icon: Icons.check, iconSize: 18, fontSize: 15),
+                      const SizedBox(height: 10),
+                      const ProfileDoneIcon(label: 'Shoshilinch buyurtmalar', icon: Icons.check, iconSize: 18, fontSize: 15),
+                      const SizedBox(height: 10),
+                      const ProfileDoneIcon(label: 'Iternetga doimiy kirish imkoni', icon: Icons.check, iconSize: 18, fontSize: 15),
+                      const SizedBox(height: 25),
+                      Text(
+                        'Mavzular',
+                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                              fontSize: size.width * 0.04,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                            ),
+                      ),
+                      Container(
+                        color: const Color(0xffBBDFBB),
+                        height: size.height * 0.06,
+                        child: Center(
+                          child: Text(
+                            'Galereya',
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                color: const Color(0xff2B5C2B),
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 0.15,
+                                fontSize: size.height * 0.025,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        color: const Color(0xffBBDFBB),
+                        height: size.height * 0.06,
+                        child: Center(
+                          child: Text(
+                            'Fikrlar',
+                            style: GoogleFonts.montserrat(
+                              textStyle: TextStyle(
+                                color: const Color(0xff2B5C2B),
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 0.15,
+                                fontSize: size.height * 0.025,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -233,6 +570,13 @@ class _ProfileViewState extends State<ProfileView> {
       ),
     );
   }
+
+  List decImage = [
+    'assets/Rectangle285.png',
+    'assets/Rectangle286.png',
+    'assets/Rectangle287.png',
+    'assets/Rectangle288.png',
+  ];
 }
 
 class _ControlsOverlay extends StatelessWidget {
@@ -312,6 +656,42 @@ class ProfilLabelIcon extends StatelessWidget {
               fontSize: fontSize,
               color: labelColor ?? Colors.black,
             ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ProfileDoneIcon extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  final double iconSize;
+  final double fontSize;
+
+  const ProfileDoneIcon({
+    Key? key,
+    required this.label,
+    required this.icon,
+    required this.iconSize,
+    required this.fontSize,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          size: iconSize,
+          color: Colors.black,
+        ),
+        const SizedBox(width: 4),
+        Text(
+          label,
+          style: GoogleFonts.montserrat(
+            fontSize: fontSize,
+            color: Colors.black,
           ),
         ),
       ],
