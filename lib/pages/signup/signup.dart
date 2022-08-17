@@ -53,7 +53,7 @@ class _SignUpPageState extends State<SignUpPage> {
               // Navigating to the dashboard screen if the user is authenticated
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (context) => Home(),
+                  builder: (context) => const Home(),
                 ),
               );
             }
@@ -68,208 +68,191 @@ class _SignUpPageState extends State<SignUpPage> {
               return const Center(child: CircularProgressIndicator());
             }
             if (state is UnAuthenticated) {
-              return Center(
-                child: Form(
-                  key: _formKey,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: size.height * 0.04, left: size.width * 0.05, right: size.width * 0.05),
-                          child: TextFormField(
-                            enabled: true,
-                            autocorrect: true,
-                            key: const Key('SignUpForm_nameInput_textField'),
-                            decoration: InputDecoration(
-                              labelText: 'Ism',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.grey.withOpacity(0.6),
-                                  width: 1,
-                                  style: BorderStyle.solid,
-                                ),
+              return Form(
+                key: _formKey,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: size.width * 0.07, left: size.width * 0.05, right: size.width * 0.05),
+                        child: TextFormField(
+                          enabled: true,
+                          autocorrect: true,
+                          key: const Key('SignUpForm_nameInput_textField'),
+                          decoration: InputDecoration(
+                            labelText: 'Ism',
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey.withOpacity(0.6),
+                                width: 1,
+                                style: BorderStyle.solid,
                               ),
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
-                          child: TextFormField(
-                            enabled: true,
-                            autocorrect: true,
-                            key: const Key('SignUpForm_lastnameInput_textField'),
-                            decoration: InputDecoration(
-                              labelText: 'Familiya',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.grey.withOpacity(0.6),
-                                  width: 1,
-                                  style: BorderStyle.solid,
-                                ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
+                        child: TextFormField(
+                          enabled: true,
+                          autocorrect: true,
+                          key: const Key('SignUpForm_lastnameInput_textField'),
+                          decoration: InputDecoration(
+                            labelText: 'Familiya',
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey.withOpacity(0.6),
+                                width: 1,
+                                style: BorderStyle.solid,
                               ),
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
-                          child: Container(
-                            height: size.height * 0.08,
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                border: Border.all(
-                                  width: 1,
-                                  color: Colors.grey.withOpacity(0.8),
-                                  style: BorderStyle.solid,
-                                )),
-                            child: Center(
-                              child: DropdownButton<String>(
-                                value: dropdownValue,
-                                underline: Container(
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                borderRadius: BorderRadius.circular(5),
-                                icon: const Icon(Icons.keyboard_arrow_down_outlined),
-                                iconSize: size.width * 0.06,
-                                onChanged: (String? newValue) {
-                                  setState(() {
-                                    dropdownValue = newValue;
-                                  });
-                                },
-                                items: dropdownItems.map<DropdownMenuItem<String>>((String value) {
-                                  return DropdownMenuItem<String>(
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
-                                isExpanded: true,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
+                        child: DropdownButtonFormField<String>(
+                          icon: const Icon(Icons.keyboard_arrow_down_outlined),
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            label: Text('Kim kerak'),
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                          value: dropdownValue,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              dropdownValue = newValue;
+                            });
+                          },
+                          items: dropdownItems.map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                          isExpanded: true,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
+                        child: TextFormField(
+                          enabled: true,
+                          autocorrect: true,
+                          key: const Key('SignUpForm_emailInput_textField'),
+                          decoration: InputDecoration(
+                            labelText: 'Email yoki Telefon',
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey.withOpacity(0.6),
+                                width: 1,
+                                style: BorderStyle.solid,
                               ),
                             ),
                           ),
+                          controller: _emailController,
+                          validator: (value) {
+                            return value != null && !EmailValidator.validate(value) ? 'Enter a valid email' : null;
+                          },
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
-                          child: TextFormField(
-                            enabled: true,
-                            autocorrect: true,
-                            key: const Key('SignUpForm_emailInput_textField'),
-                            decoration: InputDecoration(
-                              labelText: 'Email yoki Telefon',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.grey.withOpacity(0.6),
-                                  width: 1,
-                                  style: BorderStyle.solid,
-                                ),
-                              ),
-                            ),
-                            controller: _emailController,
-                            validator: (value) {
-                              return value != null && !EmailValidator.validate(value) ? 'Enter a valid email' : null;
-                            },
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
-                          child: TextFormField(
-                            key: const Key('SignUpForm_passwordInput_textField'),
-                            decoration: InputDecoration(
-                              suffixIcon: IconButton(icon: const Icon(Icons.visibility_off_outlined), onPressed: () {}),
-                              labelText: 'Parol',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.grey.withOpacity(0.6),
-                                  width: 1,
-                                  style: BorderStyle.solid,
-                                ),
-                              ),
-                            ),
-                            controller: _passwordController,
-                            autovalidateMode: AutovalidateMode.onUserInteraction,
-                            validator: (value) {
-                              return value != null && value.length < 6 ? "Enter min. 6 characters" : null;
-                            },
-                            obscureText: true,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, bottom: size.height * 0.04, right: size.width * 0.05),
-                          child: TextFormField(
-                            key: const Key('SignUpForm_passwordInput_textField'),
-                            decoration: InputDecoration(
-                              suffixIcon: IconButton(icon: const Icon(Icons.visibility_off_outlined), onPressed: () {}),
-                              labelText: 'Parolni tasdiqlang',
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.grey.withOpacity(0.6),
-                                  width: 1,
-                                  style: BorderStyle.solid,
-                                ),
-                              ),
-                            ),
-                            obscureText: true,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: size.width * 0.05, right: size.width * 0.05, bottom: size.height * 0.03),
-                          child: GestureDetector(
-                            child: const Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(text: 'Men ro\'yxatdan o\'tib, '),
-                                  TextSpan(text: 'foydalanuvchi shartnomasini ', style: TextStyle(color: Colors.indigo, decoration: TextDecoration.underline)),
-                                  TextSpan(text: 'qabul qilaman'),
-                                ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, right: size.width * 0.05),
+                        child: TextFormField(
+                          key: const Key('SignUpForm_passwordInput_textField'),
+                          decoration: InputDecoration(
+                            suffixIcon: IconButton(icon: const Icon(Icons.visibility_off_outlined), onPressed: () {}),
+                            labelText: 'Parol',
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey.withOpacity(0.6),
+                                width: 1,
+                                style: BorderStyle.solid,
                               ),
                             ),
                           ),
+                          controller: _passwordController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (value) {
+                            return value != null && value.length < 6 ? "Enter min. 6 characters" : null;
+                          },
+                          obscureText: true,
                         ),
-                        Container(
-                          height: size.height * 0.06,
-                          width: size.width * 0.9,
-                          decoration: BoxDecoration(
-                            color: const Color(0xff326A32),
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border.all(
-                              color: Colors.transparent,
-                              style: BorderStyle.solid,
-                              width: 1,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: size.height * 0.03, left: size.width * 0.05, bottom: size.height * 0.04, right: size.width * 0.05),
+                        child: TextFormField(
+                          key: const Key('SignUpForm_passwordInput_textField'),
+                          decoration: InputDecoration(
+                            suffixIcon: IconButton(icon: const Icon(Icons.visibility_off_outlined), onPressed: () {}),
+                            labelText: 'Parolni tasdiqlang',
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.grey.withOpacity(0.6),
+                                width: 1,
+                                style: BorderStyle.solid,
+                              ),
                             ),
                           ),
-                          child: ElevatedButton(
-                            key: const Key('SignUpForm_continue_raisedButton'),
-                            onPressed: () {
-                              _createAccountWithEmailAndPassword(context);
-                            },
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                          obscureText: true,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: size.width * 0.05, right: size.width * 0.05, bottom: size.height * 0.03),
+                        child: GestureDetector(
+                          child: const Text.rich(
+                            TextSpan(
                               children: [
-                                Text(
-                                  'Davom Etish'.toUpperCase(),
-                                  style: GoogleFonts.montserrat(
-                                    textStyle: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: size.width * 0.02,
-                                ),
-                                Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  color: Colors.white,
-                                  size: size.height * 0.02,
-                                ),
+                                TextSpan(text: 'Men ro\'yxatdan o\'tib, '),
+                                TextSpan(text: 'foydalanuvchi shartnomasini ', style: TextStyle(color: Colors.indigo, decoration: TextDecoration.underline)),
+                                TextSpan(text: 'qabul qilaman'),
                               ],
                             ),
                           ),
                         ),
-                        SizedBox(height: size.height * 0.02),
-                      ],
-                    ),
+                      ),
+                      Container(
+                        height: size.height * 0.06,
+                        width: size.width * 0.9,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff326A32),
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            color: Colors.transparent,
+                            style: BorderStyle.solid,
+                            width: 1,
+                          ),
+                        ),
+                        child: ElevatedButton(
+                          key: const Key('SignUpForm_continue_raisedButton'),
+                          onPressed: () {
+                            _createAccountWithEmailAndPassword(context);
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Davom Etish'.toUpperCase(),
+                                style: GoogleFonts.montserrat(
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: size.width * 0.02,
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: Colors.white,
+                                size: size.height * 0.02,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: size.height * 0.02),
+                    ],
                   ),
                 ),
               );
