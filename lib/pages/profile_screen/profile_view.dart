@@ -1,16 +1,21 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:gitsuz/models/user_bar_chart.dart';
+import 'package:gitsuz/pages/blog_screen/post_page.dart';
+import 'package:gitsuz/pages/profile_screen/widgets/bar_chart.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/controls_overlay.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/profile_done_icon.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/profile_label_icon.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/profile_pic_gallery.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/topic.dart';
+import 'package:gitsuz/pages/profile_screen/widgets/user_bar_chart_data.dart';
 import 'package:gitsuz/pages/save/save_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:video_player/video_player.dart';
-import 'package:fl_chart/fl_chart.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -32,6 +37,7 @@ class _ProfileViewState extends State<ProfileView> {
     _controller.setLooping(true);
     _controller.initialize().then((_) => setState(() {}));
     _controller.play();
+    _controller.setVolume(0);
   }
 
   @override
@@ -621,13 +627,211 @@ class _ProfileViewState extends State<ProfileView> {
                       ),
                       Row(
                         children: [
-                          BarChart(
-                            BarChartData(
-
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              children: [
+                                Text(
+                                  '23/30',
+                                  style: GoogleFonts.montserrat(
+                                    textStyle: TextStyle(
+                                      color: const Color(0xff2B5C2B),
+                                      fontWeight: FontWeight.w500,
+                                      letterSpacing: 0.15,
+                                      fontSize: size.height * 0.05,
+                                    ),
+                                  ),
+                                ),
+                                RatingBar.builder(
+                                  initialRating: 4,
+                                  minRating: 1,
+                                  itemSize: 15,
+                                  direction: Axis.horizontal,
+                                  allowHalfRating: true,
+                                  itemCount: 5,
+                                  itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                  itemBuilder: (context, index) => const Icon(
+                                    Icons.star,
+                                    color: Color(0xff1D3D1D),
+                                  ),
+                                  onRatingUpdate: (rating) {
+                                    print(rating);
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                          const Expanded(
+                            flex: 4,
+                            child: SizedBox(
+                              height: 200,
+                              width: 200,
+                              child: HorizontalBarChart(),
                             ),
                           ),
                         ],
-                      )
+                      ),
+                      const SizedBox(height: 15),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Mavzular',
+                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                      fontSize: size.width * 0.045,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                              ),
+                              RatingBar.builder(
+                                initialRating: 4,
+                                minRating: 1,
+                                itemSize: 10,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                itemBuilder: (context, index) => const Icon(
+                                  Icons.star,
+                                  color: Color(0xff1D3D1D),
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 5),
+                          Text(
+                            'Hello! I’m Abdusattor Ergashev. Lorem ipsum dolor sit amet, consectetur adipiscing elit. A eleifend pretium quis sed. Suspendisse viverra odio laoreet netus lacus facilisis malesuada non. Gravida id sed tellus nec elit adipiscing risus. Pretium et consequat in ut imperdiet nec tortor',
+                            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                  fontSize: size.width * 0.04,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0.25,
+                                ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Mavzular',
+                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                      fontSize: size.width * 0.045,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                              ),
+                              RatingBar.builder(
+                                initialRating: 4,
+                                minRating: 1,
+                                itemSize: 10,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                itemBuilder: (context, index) => const Icon(
+                                  Icons.star,
+                                  color: Color(0xff1D3D1D),
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 5),
+                          Text(
+                            'Hello! I’m Abdusattor Ergashev. Lorem ipsum dolor sit amet, consectetur adipiscing elit. A eleifend pretium quis sed. Suspendisse viverra odio laoreet netus lacus facilisis malesuada non. Gravida id sed tellus nec elit adipiscing risus. Pretium et consequat in ut imperdiet nec tortor',
+                            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                  fontSize: size.width * 0.04,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0.25,
+                                ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Mavzular',
+                                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                      fontSize: size.width * 0.045,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                              ),
+                              RatingBar.builder(
+                                initialRating: 4,
+                                minRating: 1,
+                                itemSize: 10,
+                                direction: Axis.horizontal,
+                                allowHalfRating: true,
+                                itemCount: 5,
+                                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                itemBuilder: (context, index) => const Icon(
+                                  Icons.star,
+                                  color: Color(0xff1D3D1D),
+                                ),
+                                onRatingUpdate: (rating) {
+                                  print(rating);
+                                },
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 5),
+                          Text(
+                            'Hello! I’m Abdusattor Ergashev. Lorem ipsum dolor sit amet, consectetur adipiscing elit. A eleifend pretium quis sed. Suspendisse viverra odio laoreet netus lacus facilisis malesuada non. Gravida id sed tellus nec elit adipiscing risus. Pretium et consequat in ut imperdiet nec tortor',
+                            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                  fontSize: size.width * 0.04,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0.25,
+                                ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 15),
+                      Padding(
+                        padding: EdgeInsets.only(top: size.width * 0.03, right: 10),
+                        child: GestureDetector(
+                          onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => PostPage())),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 5, right: 5),
+                                child: Text(
+                                  'Barchasini ko\'rish',
+                                  style: GoogleFonts.montserrat(
+                                    color: const Color(0xff438E43),
+                                    fontWeight: FontWeight.w500,
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 20,
+                                    height: 1.6,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              Icon(
+                                Icons.keyboard_arrow_down,
+                                color: const Color(0xff438E43),
+                                size: size.width * 0.07,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
