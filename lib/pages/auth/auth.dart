@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitsuz/pages/home/home.dart';
 import 'package:gitsuz/pages/signin/signin.dart';
 import 'package:gitsuz/pages/signup/signup.dart';
 import 'package:gitsuz/widgets/button.dart';
@@ -33,7 +34,7 @@ class AuthPage extends StatelessWidget {
                   children: [
                     const Spacer(),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => Home())),
                       child: Text(
                         'O\'tkazib yuborish',
                         style: GoogleFonts.montserrat(

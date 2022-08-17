@@ -39,7 +39,8 @@ class RecoveryPassForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late Size size = MediaQuery.of(context).size;
-    return SizedBox(
+    return Container(
+      color: Color(0xffF5F6F5),
       height: size.height - size.height * 0.2,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,7 +106,6 @@ class _ContinueButton extends StatelessWidget {
           height: size.height * 0.06,
           width: size.width * 0.9,
           decoration: BoxDecoration(
-            color: const Color(0xff326A32),
             borderRadius: BorderRadius.circular(5),
             border: Border.all(
               color: Colors.transparent,
@@ -114,6 +114,9 @@ class _ContinueButton extends StatelessWidget {
             ),
           ),
           child: ElevatedButton(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Color(0xff326A32))
+            ),
             key: const Key('VerifySmsForm_continue_raisedButton'),
             onPressed: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => const NewPasswordPage())),
             child: Row(

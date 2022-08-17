@@ -22,8 +22,8 @@ class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  String? dropdownValue = 'Yollovchi';
-  List<String> dropdownItems = <String>['Gid', 'Tarjimon', 'Yollovchi'];
+  String? userType = 'Yollovchi';
+  List<String> userTypes = <String>['Gid', 'Tarjimon', 'Yollovchi'];
 
   @override
   void dispose() {
@@ -37,6 +37,7 @@ class _SignUpPageState extends State<SignUpPage> {
     late Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xffF5F6F5),
         appBar: AppBar(
           elevation: 0,
           leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
@@ -115,16 +116,16 @@ class _SignUpPageState extends State<SignUpPage> {
                           icon: const Icon(Icons.keyboard_arrow_down_outlined),
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
-                            label: Text('Kim kerak'),
+                            label: Text('Kim'),
                           ),
                           borderRadius: BorderRadius.circular(5),
-                          value: dropdownValue,
+                          value: userType,
                           onChanged: (String? newValue) {
                             setState(() {
-                              dropdownValue = newValue;
+                              userType = newValue;
                             });
                           },
-                          items: dropdownItems.map<DropdownMenuItem<String>>((String value) {
+                          items: userTypes.map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
                               child: Text(value),
@@ -214,7 +215,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         height: size.height * 0.06,
                         width: size.width * 0.9,
                         decoration: BoxDecoration(
-                          color: const Color(0xff326A32),
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all(
                             color: Colors.transparent,
@@ -223,6 +223,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         ),
                         child: ElevatedButton(
+                          style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xff326A32))),
                           key: const Key('SignUpForm_continue_raisedButton'),
                           onPressed: () {
                             _createAccountWithEmailAndPassword(context);

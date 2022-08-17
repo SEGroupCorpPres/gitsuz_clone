@@ -35,6 +35,7 @@ class _SignInPageState extends State<SignInPage> {
     late Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color(0xffF5F6F5),
         appBar: AppBar(
           elevation: 0,
           leading: IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.arrow_back)),
@@ -132,7 +133,6 @@ class _SignInPageState extends State<SignInPage> {
                               height: size.height * 0.06,
                               width: size.width * 0.9,
                               decoration: BoxDecoration(
-                                color: const Color(0xff326A32),
                                 borderRadius: BorderRadius.circular(5),
                                 border: Border.all(
                                   color: Colors.transparent,
@@ -141,6 +141,9 @@ class _SignInPageState extends State<SignInPage> {
                                 ),
                               ),
                               child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all(Color(0xff326A32))
+                                ),
                                 key: const Key('SignInForm_continue_raisedButton'),
                                 onPressed: () {
                                   _authenticateWithEmailAndPassword(context);
