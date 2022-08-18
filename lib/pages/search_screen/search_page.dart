@@ -7,8 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 enum SearchCharacter { online, all }
 
-enum SexCharacter { male, female }
-
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
@@ -18,14 +16,15 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   final _formKey = GlobalKey<FormState>();
-  String? userType = 'Yollovchi';
+  String? userType = 'Gid';
   List<String> userTypes = <String>['Gid', 'Tarjimon', 'Yollovchi'];
   String? state = 'Uzbekistan';
   List<String> states = <String>['Uzbekistan', 'USA', 'Saudi Arabia', 'China'];
   String? city = 'Tashkent';
   List<String> cities = <String>['Tashkent', 'Urgench', 'Samarqand', 'Andijon'];
   SearchCharacter? _character = SearchCharacter.online;
-  SexCharacter? _sex = SexCharacter.male;
+  bool? isMale = true;
+  bool? isFemale = true;
   final List<String> langs = ['Uzb', 'French', 'Russian', 'English', 'Arabian'];
   List<String> selectedLang = [];
 
@@ -35,7 +34,7 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       backgroundColor: const Color(0xffF5F6F5),
       appBar: AppBar(
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         elevation: 0,
         title: Text(
           'Qidiruv',
@@ -184,6 +183,7 @@ class _SearchPageState extends State<SearchPage> {
                           border: Border.all(width: 1, color: Colors.grey, style: BorderStyle.solid),
                           borderRadius: BorderRadius.circular(5),
                         ),
+                        hint: Text('Til'),
                         style: GoogleFonts.montserrat(fontSize: 18, color: Colors.black, letterSpacing: 0.24),
                         buttonPadding: const EdgeInsets.only(right: 10),
                         icon: const Icon(Icons.keyboard_arrow_down_outlined),
@@ -259,18 +259,30 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                     ),
                     SizedBox(height: size.height * 0.02),
-                    Row(
+                    SizedBox(
+                      width: size.width,
+                      child: Text(
+                        'Jinsi',
+                        style: GoogleFonts.montserrat(
+                          color: Colors.black,
+                          letterSpacing: 0.15,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 20,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                    ),
+                    Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
                           children: [
-                            Radio<SexCharacter>(
-                              value: SexCharacter.male,
-                              groupValue: _sex,
+                            Checkbox(
+                              value: isMale,
                               activeColor: const Color(0xff326A32),
-                              onChanged: (SexCharacter? value) {
+                              onChanged: ( value) {
                                 setState(() {
-                                  _sex = value;
+                                  isMale = value;
                                 });
                               },
                             ),
@@ -279,13 +291,12 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         Row(
                           children: [
-                            Radio<SexCharacter>(
-                              value: SexCharacter.female,
-                              groupValue: _sex,
+                            Checkbox(
+                              value: isFemale,
                               activeColor: const Color(0xff326A32),
-                              onChanged: (SexCharacter? value) {
+                              onChanged: ( value) {
                                 setState(() {
-                                  _sex = value;
+                                  isFemale = value;
                                 });
                               },
                             ),

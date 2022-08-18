@@ -100,20 +100,16 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               StreamBuilder<User?>(
                 initialData: FirebaseAuth.instance.currentUser,
                 stream: FirebaseAuth.instance.userChanges(),
-                builder: (context, snapshot) {
+                builder: (context, AsyncSnapshot snapshot){
                   // If the snapshot has user data, then they're already signed in. So Navigating to the Dashboard.
                   if (snapshot.hasData) {
-                    // setState(() {
                     Timer(const Duration(milliseconds: 2000), () {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const Home()));
                     });
-                    // });
                   } else {
-                    // setState(() {
                     Timer(const Duration(milliseconds: 2000), () {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const IntroHome()));
                     });
-                    // });
                   }
                   return Container();
                 },

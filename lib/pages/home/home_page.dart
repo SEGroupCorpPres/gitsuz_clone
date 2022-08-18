@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       backgroundColor: const Color(0xffF5F6F5),
       appBar: AppBar(
         elevation: 0,
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         title: Text(
           'Gits.uz',
           style: TextStyle(fontSize: size.width * 0.07),

@@ -40,7 +40,7 @@ class NewPassForm extends StatelessWidget {
   Widget build(BuildContext context) {
     late Size size = MediaQuery.of(context).size;
     return Container(
-      color: Color(0xffF5F6F5),
+      color: const Color(0xffF5F6F5),
       height: size.height - size.height * 0.2,
       child: Column(
         // mainAxisSize: MainAxisSize.max,

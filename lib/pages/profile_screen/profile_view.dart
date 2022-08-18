@@ -2,7 +2,6 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:gitsuz/models/user_bar_chart.dart';
 import 'package:gitsuz/pages/blog_screen/post_page.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/bar_chart.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/controls_overlay.dart';
@@ -10,12 +9,11 @@ import 'package:gitsuz/pages/profile_screen/widgets/profile_done_icon.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/profile_label_icon.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/profile_pic_gallery.dart';
 import 'package:gitsuz/pages/profile_screen/widgets/topic.dart';
-import 'package:gitsuz/pages/profile_screen/widgets/user_bar_chart_data.dart';
+import 'package:gitsuz/pages/proposition/create_edit_propos.dart';
 import 'package:gitsuz/pages/save/save_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:video_player/video_player.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -138,7 +136,7 @@ class _ProfileViewState extends State<ProfileView> {
                             borderRadius: BorderRadius.circular(5),
                           ),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => const CreateAndEditProps())),
                             child: Text(
                               'Bog\'lanish',
                               style: GoogleFonts.montserrat(

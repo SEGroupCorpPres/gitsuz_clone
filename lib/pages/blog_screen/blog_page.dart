@@ -41,7 +41,7 @@ class _BlogPageState extends State<BlogPage> with SingleTickerProviderStateMixin
       backgroundColor: const Color(0xffF5F6F5),
       appBar: AppBar(
         elevation: 0,
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         title: Text(
           'Blog',
           style: TextStyle(fontSize: size.width * 0.07),

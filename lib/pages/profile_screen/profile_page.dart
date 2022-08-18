@@ -2,8 +2,10 @@ import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gitsuz/bloc/auth/auth_bloc.dart';
+import 'package:gitsuz/pages/profile_screen/edit_prodile.dart';
 import 'package:gitsuz/pages/proposition/list_propositions.dart';
 import 'package:gitsuz/pages/save/save_page.dart';
+import 'package:gitsuz/pages/settings/settings.dart';
 import 'package:gitsuz/repositories/auth_repository.dart';
 import 'package:gitsuz/widgets/label_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +24,7 @@ class ProfilePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xffF5F6F5),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text(
             'Profil',
             style: TextStyle(fontSize: size.width * 0.07),
@@ -31,7 +34,7 @@ class ProfilePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15),
               child: GestureDetector(
-                onTap: () => context.read<AuthBloc>().add(SignOutRequested()),
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SettingsPage())),
                 child: const Icon(
                   Ionicons.settings_outline,
                 ),
@@ -156,7 +159,7 @@ class ProfilePage extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(top: size.width * 0.03),
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => EditProfile())),
                                   child: Text(
                                     'Profilni o\'zgartirish',
                                     style: GoogleFonts.montserrat(
@@ -201,7 +204,7 @@ class ProfilePage extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children: [
                                           SizedBox(
-                                            width: size.width * 0.4,
+                                            width: size.width * 0.41,
                                             child: LabelIcon(
                                               label: 'Arizalarim',
                                               bgColor: Colors.transparent,
